@@ -19,12 +19,8 @@ const Login = () => {
         const data = Object.fromEntries(new FormData(e.target));
         axiosMidgets.post("api/v1/users/login", data)
             .then(({ data }) => {
-                login(data)
-                if (data.user.role === 'admin') {
+                login(data),
                     navigate('/panel/admin/racers/all')
-                } else {
-                    navigate('/panel/user')
-                }
             })
             .catch((err) => console.log(err))
     }
@@ -42,14 +38,16 @@ const Login = () => {
                         <input className="bg-transparent outline-none border-b border-gray-700 p-1" autoComplete="off"
                             id="email"
                             type="email"
-                            name="email" />
+                            name="email"
+                            defaultValue={'tester@testing1.com'} />
                     </div>
                     <div className="grid gap-4">
                         <label className="text-white" htmlFor="password">Constraseña</label>
                         <input className="bg-transparent outline-none border-b border-gray-700 p-1" autoComplete="off"
                             id="password"
                             type="password"
-                            name="password" />
+                            name="password"
+                            defaultValue={'123456789ar'} />
                     </div>
 
                     <button className="bg-purple-light transition-all uppercase font-semibold max-w-max mx-auto px-8 py-1 rounded-xl">Entrar</button>
