@@ -15,6 +15,7 @@ const CompetitionCard = ({ competition }) => {
                             <h3 className="flex items-center gap-2"><CarIcon /> {racer.number}</h3>
                         </li>
                     ))}
+                    <button>Detalles</button>
                 </ul>
             </section>
         </article>

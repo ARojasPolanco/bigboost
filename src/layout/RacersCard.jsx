@@ -19,7 +19,7 @@ const RacersCard = ({ racer }) => {
     return (
         <article className="flex py-6 px-4 border-2 border-gray-400 rounded-md bg-gray-400/10">
             <section className="flex-1 flex flex-col gap-[22px]">
-                <h3>Nombre del corredor: <span>{racer.name}</span></h3>
+                <h3>Nombre: <span>{racer.name}</span></h3>
                 <h3>Número de auto: <span>{racer.number}</span></h3>
                 <h3>Posición en campeonato: <span>{racer.position}</span></h3>
                 <h3>Categoría: <span>{racer.category}</span></h3>
