@@ -1,33 +1,21 @@
-import { useUserInfo } from "../store/userInfo";
+import { CarIcon, PilotIcon } from "../shared/Icons";
 
 const CompetitionCard = ({ competition }) => {
-    const { token } = useUserInfo(state => state.user);
-
-    // const handleDeleteCompetition = () => {
-    //     axiosMidgets.delete(`/api/v1/competitions/${competition.id}`, {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     })
-    //         .then(() => window.location.reload())
-    //         .catch((err) => console.log(err));
-    // };
 
     return (
-        <article className="border-2 border-gray-400 rounded-md bg-gray-400/10 p-4">
-            <h2>{competition.name}</h2>
-            <ul>
-                {competition.racers.map(racer => (
-                    <li key={racer.id}>
-                        <p><strong>Nombre:</strong> {racer.name}</p>
-                        <p><strong>Número de auto:</strong> {racer.number}</p>
-                    </li>
-                ))}
-            </ul>
-            <section className="flex justify-end">
-                <button>
-                    Eliminar
-                </button>
+        <article className="border-2 border-gray-400 rounded-md bg-gray-400/10 p-4 font-montserrat">
+            <h2 className="text-center font-medium mb-4">{competition.name}</h2>
+            <section className="w-[300px] sm:w-[700px]">
+                <ul className="grid gap-4">
+                    {competition.racers.map(racer => (
+                        <li
+                            className="flex items-center justify-between"
+                            key={racer.id}>
+                            <h3 className="flex items-center gap-2"><PilotIcon /> {racer.name}</h3>
+                            <h3 className="flex items-center gap-2"><CarIcon /> {racer.number}</h3>
+                        </li>
+                    ))}
+                </ul>
             </section>
         </article>
     );

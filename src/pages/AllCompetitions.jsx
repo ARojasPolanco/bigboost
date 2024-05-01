@@ -14,8 +14,9 @@ const AllCompetitions = () => {
 
     return (
         <ContainerAdmin>
-            <h1>Todas las competiciones</h1>
-            <CompetitionsList competitions={competitions} />
+            <section className="min-h-screen flex justify-center mt-4">
+                <CompetitionsList competitions={competitions} />
+            </section>
         </ContainerAdmin>
     );
 };
